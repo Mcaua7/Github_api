@@ -10,7 +10,10 @@ const Fetch = {
         useEffect(() => {
             const api = 'https://api.github.com/users/' 
             const url = api.concat('', user)
-            fetch(url)
+            const token = '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'
+            fetch(url, {headers: {
+                Authorization: `token ${token}`
+              }})
                 .then((response) => response.json())
                 .then((data) => setLogin(data.login))
         }, []);
@@ -23,7 +26,10 @@ const Fetch = {
         useEffect(() => {
             const api = 'https://api.github.com/users/' 
             const url = api.concat('', user)
-            fetch(url)
+            const token = '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'
+            fetch(url, {headers: {
+                Authorization: `token ${token}`
+              }})
                 .then((response) => response.json())
                 .then((data) => setName(data.name))
         }, []);
@@ -37,7 +43,11 @@ const Fetch = {
         useEffect(() => {
             const api = 'https://api.github.com/users/' 
             const url = api.concat('', user)
-            fetch(url)
+            const token = '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'
+
+            fetch(url, {headers: {
+                Authorization: `token ${token}`
+              }})
                 .then((response) => response.json())
                 .then((data) => setAvatar(data.avatar_url)) 
         }, []);
@@ -51,28 +61,39 @@ const Fetch = {
         useEffect(() => {
             const api = 'https://api.github.com/users/' 
             const url = api.concat('', user)
+            const token = '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'
+
             console.log(url)
-            fetch(url)
+            fetch(url, {headers: {
+                Authorization: `token ${token}`
+              }})
                 .then((response) => response.json())
                 .then((data) => setBio(data.bio))
         }, []);
 
         return bio
     },
-
-    GetOrgs: function(user) {
-        const [orgsUrl, setOrgsUrl] = useState(null)
-
-        useEffect(() => {
-            const api = 'https://api.github.com/users/' 
-            const url = api.concat('', user)
-            fetch(url)
-                .then((response) => response.json)
-                .then((data) => setOrgsUrl(data.organizations_url))
-        })
-        console.log(orgsUrl)
-    },
     
+    GetRepos: function(user) {
+        const [repos, setRepos] = useState([])
+
+         useEffect(() => {
+            const api = 'https://api.github.com/users/' 
+            const userUrl = api.concat('',user)
+            const url = userUrl.concat('/repos')
+            const token = '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'
+
+            console.log(url)
+            
+            fetch(url, {headers: {
+                Authorization: `token ${token}`
+              }})
+              .then((response) => response.json())
+              .then((data) => setRepos(data.repos))
+            console.log(repos)
+
+        })
+    }
 }
 
 export default Fetch

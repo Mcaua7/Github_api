@@ -7,7 +7,7 @@ import Fetch from "../Fetch/Functions/FuntionsGet";
 
 export default function Profile() {
 
-    const [user , setUser] = useState('Mcaua7')
+    const [user , setUser] = useState('ronaldaraujo')
     console.log(user)
 
 

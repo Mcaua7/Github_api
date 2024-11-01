@@ -6,14 +6,14 @@ import Profile from './Components/Profile/Profile';
 
 export default function App() {
 
-  const [user , setUser] = useState('Mcaua7')
+  const [user , setUser] = useState('ronaldaraujo')
 
   return (
     <View style={styles.container}>
       
       <View>
         <Profile/>
-        <Text>{Fetch.GetBio(user)}</Text>
+        <Text>{Fetch.GetRepos(user)}</Text>
       </View>
     </View>
   );
