@@ -5,13 +5,19 @@ const styles = StyleSheet.create({
     //Antes de pesquisar
     search:{
         flex: 1,
-        flexDirection: 'row',
+        flexDirection: 'collumn',
         maragin: 30,
         border:4,
         borderColor:'red',
         paddingTop: 80,
         alignItems: 'center',
         justifyContent: 'center',
+    },
+    viewInput:{
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'center',
+        paddingTop: 60,
     },
     input:{
         flex: 0,
@@ -23,11 +29,11 @@ const styles = StyleSheet.create({
         paddingRight: 10,
         justifyContent: 'center',
         padding: 10,
-        margin: 10
     },
     searchButton:{
-        fontSize: 30,
-        fontWeight: 'bold'
+        fontSize: 40,
+        fontWeight: 'bold',
+        paddingLeft: 10
     },
     container:{
         flex: 1,
@@ -39,16 +45,32 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
+    viewTitle:{
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    title:{
+        fontSize: 30,
+        fontWeight: 'bold',
+        margin: 10
+    },
+    image:{
+        height: 200,
+        width: 200,
+    },
 
     //Quando pesquisado
     MainInformations:{
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
+        margin: 10
     },
     MoreInformations:{
-        flex: 1,
-        width: '100%',
+        flex: 2,
+        width: 350,
+        height: 300,
         borderWidth: 1,
         borderRadius: 10,
         borderColor: 'lightgrey',
@@ -60,7 +82,7 @@ const styles = StyleSheet.create({
     reset:{
         flex: 0,
         backgroundColor: 'white',
-        height: 90,
+        height: 100,
         width: '99%',
         marginTop: 20,
         justifyContent: 'center',
@@ -75,7 +97,7 @@ const styles = StyleSheet.create({
         height: '60%',
         justifyContent: 'center',
         alignItems: 'center'
-    }
+    },
 
 })
 

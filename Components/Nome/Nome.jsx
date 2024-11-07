@@ -5,7 +5,7 @@ import styles from "./NomeStyle";
 // Aqui vou importar o nome e o login (@) do usuário
 
 export default function Nome(props) {
-    console.log('name says', Fetch.GetName(props.busca))
+
     return(
         <View style={styles.name}>
             <Text style={styles.nameText}>{Fetch.GetName(props.busca)}</Text>

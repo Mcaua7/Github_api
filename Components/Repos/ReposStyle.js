@@ -44,14 +44,10 @@ const styles = StyleSheet.create({
         flexBasis: 0
     },
     viewList:{
-        flex: 1,
+        flex: 2,
         justifyContent:'flex-start',
-        alignItems:'center'
+        paddingLeft: 5,
     },
-    flatlist:{
-        flex: 0,
-        flexDirection: 'row'
-    }
 
 
 })

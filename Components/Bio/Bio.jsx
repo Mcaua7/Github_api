@@ -4,7 +4,6 @@ import styles from "./BioStyles";
 import Ionicons from '@expo/vector-icons/Ionicons';
 
 export default function Bio(props) {
-    console.log("Bio says",Fetch.GetBio(props.busca))
 
     return(
         <View style={styles.viewBio}>

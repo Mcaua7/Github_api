@@ -4,7 +4,6 @@ import styles from "./ReposStyle";
 import Ionicons from '@expo/vector-icons/Ionicons';
 
 export default function Repos(props) {
-    console.log("repos says",Fetch.GetRepos(props.busca))
 
     return(
 
@@ -17,11 +16,12 @@ export default function Repos(props) {
                     <Text style={styles.title}>Repos:</Text>
                 </View>
 
-                <FlatList 
-                    data={Fetch.GetRepos(props.busca)} 
-                    renderItem={({item}) => <View><Text>{item}, </Text></View>}
-                    numColumns={3}
-                />
+                <View style={styles.viewList}>
+                    <FlatList 
+                        data={Fetch.GetRepos(props.busca)} 
+                        renderItem={({item}) => <View ><Text>{item} </Text></View>}
+                    />
+                </View>
 
             </View>
         </View>

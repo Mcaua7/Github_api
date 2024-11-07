@@ -27,6 +27,7 @@ const Fetch = {
             const api = 'https://api.github.com/users/' 
             const url = api.concat('', user)
             const token = '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'
+
             fetch(url, {headers: {
                 Authorization: `token ${token}`
               }})
@@ -51,7 +52,6 @@ const Fetch = {
                 .then((response) => response.json())
                 .then((data) => setAvatar(data.avatar_url)) 
         }, []);
-        console.log("avatar", avatar)
         
         return avatar
     },
@@ -64,7 +64,6 @@ const Fetch = {
             const url = api.concat('', user)
             const token = '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'
 
-            console.log(url)
             fetch(url, {headers: {
                 Authorization: `token ${token}`
               }})
@@ -81,15 +80,12 @@ const Fetch = {
 
     GetOrgs: function(user) {
         const [orgUrl, setOrgsUrl] = useState([])
-        const [noOrgs, setNoOrgs] = useState()
 
         useEffect(() => {
             const api = 'https://api.github.com/users/' 
             const userUrl = api.concat('',user)
             const url = userUrl.concat('/orgs')
             const token = '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'
-
-            console.log(url)
 
             const FetchOrgs = async() => {
                 const response = await fetch(url, {headers: {
@@ -106,11 +102,9 @@ const Fetch = {
         }, [])
 
         if(!orgUrl.length){
-            setNoOrgs("Este usuário não poussui organizações")
             setOrgsUrl(["Este usuário não poussui organizações"])
             return orgUrl
         }else{
-            console.log('url org', orgUrl)
             return orgUrl
         }
         
@@ -125,8 +119,6 @@ const Fetch = {
             const url = userUrl.concat('/repos')
             const token = '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'
 
-            console.log(url)
-
             const FetchRepos = async() => {
                 const response = await fetch(url, {headers: {
                     Authorization: `token ${token}`
@@ -136,13 +128,11 @@ const Fetch = {
                 setRepos(getRepos.map(item => item.name))
             }
 
-            FetchRepos()
-            console.log('Lista de repositórios', repos)
-           
+            FetchRepos()           
         }, [])
 
         if( !repos.length){
-            setRepos("Este usuário não poussui repositórios")
+            setRepos(["Este usuário não poussui repositórios"])
         }
 
         return repos
@@ -157,8 +147,6 @@ const Fetch = {
             const url = userUrl.concat('/followers')
             const token = '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'
 
-            console.log(url)
-
             const FetchFollowersLogin = async() => {
                 const response = await fetch(url, {headers: {
                     Authorization: `token ${token}`
@@ -166,14 +154,15 @@ const Fetch = {
                 const getFollowersLogin = await response.json()
 
                 setFollowerLogin(getFollowersLogin.map(item => ({login: item.login, avatar: item.avatar_url})))
-                console.log(followersLogin)
             };
 
             FetchFollowersLogin() 
         }, [])
-        if(!followersLogin.length){
-            setFollowerLogin("Este usuário não poussui seguidores")
+        
+        if( !followersLogin.length){
+            setFollowerLogin([{login: "Este usuário não possui seguidores"}])
         }
+
         return followersLogin
     },
 

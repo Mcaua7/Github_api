@@ -4,8 +4,7 @@ import styles from "./OrgsStyle";
 import Ionicons from '@expo/vector-icons/Ionicons';
 
 export default function Orgs(props) {
-    console.log("orgs says",Fetch.GetOrgs(props.busca))
-
+    
     return(
 
         <View style={styles.viewOrgs}>

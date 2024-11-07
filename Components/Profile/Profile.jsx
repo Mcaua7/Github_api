@@ -12,7 +12,6 @@ import Orgs from "../Orgs/Orgs";
 
 const exibir = () => {
     const [user , setUser] = useState(null)
-    console.log("User",user)
     const [search, setSearch] = useState(false)
 
     function Validate(search) {
@@ -29,16 +28,23 @@ const exibir = () => {
     if (search === false){
         return(
             <View style={styles.search}>
-                <View style={styles.input}>
-                    <TextInput 
-                    style={styles.loginInput} 
-                    placeholder="Digite um usuário" 
-                    onChangeText={setUser}
-                    value={user}/>
+                <View style={styles.viewTitle}>
+                    <Text style={styles.title}>Perfil Github</Text>
+                    <Image style={styles.image} source={{uri: 'https://cdn-icons-png.flaticon.com/512/25/25231.png'}}/>
                 </View>
-                <TouchableOpacity onPress={Validate}>
-                    <Ionicons style={styles.searchButton} name='search' size={23} />
-                </TouchableOpacity>
+                <View style={styles.viewInput}>
+                    <View style={styles.input}>
+                        <TextInput 
+                        style={styles.loginInput} 
+                        placeholder="Digite um usuário" 
+                        onChangeText={setUser}
+                        value={user}/>
+                    </View>
+                    <TouchableOpacity onPress={Validate}>
+                        <Ionicons style={styles.searchButton} name='search-circle' size={20} />
+                        </TouchableOpacity>
+                </View>
+                
             </View>
         )
     }else{

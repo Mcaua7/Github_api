@@ -22,7 +22,7 @@ export default function FollowersInfo(props) {
                         data={Fetch.GetFollowersLogin(props.busca)} 
                         renderItem={({item}) => <View style={styles.viewFollower}>
                                 <Image style={styles.followerAvatar} source={{uri:item.avatar}}></Image>
-                                <Text style={styles.followerLogin}>@{item.login}</Text>
+                                <Text style={styles.followerLogin}>{item.login}</Text>
                             </View> }
                         numColumns={2}
                     />
