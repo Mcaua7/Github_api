@@ -1,5 +1,5 @@
 
-import { StyleSheet, Text, View, Image, FlatList } from 'react-native';
+import { StyleSheet, View} from 'react-native';
 import Profile from './Components/Profile/Profile';
 
 export default function App() {

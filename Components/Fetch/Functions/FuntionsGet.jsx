@@ -9,7 +9,7 @@ const Fetch = {
         useEffect(() => {
             const api = 'https://api.github.com/users/' 
             const url = api.concat('', user)
-            const token = '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'
+            const token = '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'
             fetch(url, {headers: {
                 Authorization: `token ${token}`
               }})
@@ -26,7 +26,7 @@ const Fetch = {
         useEffect(() => {
             const api = 'https://api.github.com/users/' 
             const url = api.concat('', user)
-            const token = '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'
+            const token = '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'
 
             fetch(url, {headers: {
                 Authorization: `token ${token}`
@@ -44,7 +44,7 @@ const Fetch = {
         useEffect(() => {
             const api = 'https://api.github.com/users/' 
             const url = api.concat('', user)
-            const token = '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'
+            const token = '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'
 
             fetch(url, {headers: {
                 Authorization: `token ${token}`
@@ -62,7 +62,7 @@ const Fetch = {
         useEffect(() => {
             const api = 'https://api.github.com/users/' 
             const url = api.concat('', user)
-            const token = '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'
+            const token = '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'
 
             fetch(url, {headers: {
                 Authorization: `token ${token}`
@@ -85,16 +85,16 @@ const Fetch = {
             const api = 'https://api.github.com/users/' 
             const userUrl = api.concat('',user)
             const url = userUrl.concat('/orgs')
-            const token = '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'
+            const token = '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'
 
             const FetchOrgs = async() => {
                 const response = await fetch(url, {headers: {
                     Authorization: `token ${token}`
                   }})
                 const getOrgsUrl = await response.json()
-                
+                console.log(getOrgsUrl)
                 setOrgsUrl(getOrgsUrl.map(item => item.url))
-                
+                console.log(orgUrl)
             }
             
             FetchOrgs()
@@ -117,7 +117,7 @@ const Fetch = {
             const api = 'https://api.github.com/users/' 
             const userUrl = api.concat('',user)
             const url = userUrl.concat('/repos')
-            const token = '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'
+            const token = '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'
 
             const FetchRepos = async() => {
                 const response = await fetch(url, {headers: {
@@ -145,7 +145,7 @@ const Fetch = {
             const api = 'https://api.github.com/users/' 
             const userUrl = api.concat('',user)
             const url = userUrl.concat('/followers')
-            const token = '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'
+            const token = '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'
 
             const FetchFollowersLogin = async() => {
                 const response = await fetch(url, {headers: {

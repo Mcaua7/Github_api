@@ -1,4 +1,4 @@
-import { View, Text, TextInput, TouchableOpacity, Image, Vibration } from "react-native";
+import { View, Text, TextInput, TouchableOpacity, Image, } from "react-native";
 import { useState } from "react";
 import Ionicons from '@expo/vector-icons/Ionicons';
 import styles from "./ProfileStyles";
