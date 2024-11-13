@@ -1,171 +1,185 @@
-import { useState, useEffect } from 'react';
-
+import { useState, useEffect } from "react";
 
 const Fetch = {
-    GetLogin: function(user) {
+  GetLogin: function (user) {
+    const [login, setLogin] = useState(null);
 
-        const [login,setLogin] = useState(null);
+    useEffect(() => {
+      const api = "https://api.github.com/users/";
+      const url = api.concat("", user);
+      const token = "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";
+      fetch(url, {
+        headers: {
+          Authorization: `token ${token}`,
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => setLogin(data.login));
+    }, []);
 
-        useEffect(() => {
-            const api = 'https://api.github.com/users/' 
-            const url = api.concat('', user)
-            const token = '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'
-            fetch(url, {headers: {
-                Authorization: `token ${token}`
-              }})
-                .then((response) => response.json())
-                .then((data) => setLogin(data.login))
-        }, []);
+    return login;
+  },
 
-        return login
-    },
+  GetName: function (user) {
+    const [name, setName] = useState(null);
 
-    GetName: function (user) {
-        const [name,setName] = useState(null);
+    useEffect(() => {
+      const api = "https://api.github.com/users/";
+      const url = api.concat("", user);
+      const token = "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";
 
-        useEffect(() => {
-            const api = 'https://api.github.com/users/' 
-            const url = api.concat('', user)
-            const token = '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'
+      fetch(url, {
+        headers: {
+          Authorization: `token ${token}`,
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => setName(data.name));
+    }, []);
 
-            fetch(url, {headers: {
-                Authorization: `token ${token}`
-              }})
-                .then((response) => response.json())
-                .then((data) => setName(data.name))
-        }, []);
+    return name;
+  },
 
-        return name
-    },
+  GetAvatar: function (user) {
+    const [avatar, setAvatar] = useState(null);
 
-    GetAvatar: function(user) {
-        const [avatar,setAvatar] = useState(null);
+    useEffect(() => {
+      const api = "https://api.github.com/users/";
+      const url = api.concat("", user);
+      const token = "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";
 
-        useEffect(() => {
-            const api = 'https://api.github.com/users/' 
-            const url = api.concat('', user)
-            const token = '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'
+      fetch(url, {
+        headers: {
+          Authorization: `token ${token}`,
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => setAvatar(data.avatar_url));
+    }, []);
 
-            fetch(url, {headers: {
-                Authorization: `token ${token}`
-              }})
-                .then((response) => response.json())
-                .then((data) => setAvatar(data.avatar_url)) 
-        }, []);
-        
-        return avatar
-    },
-    
-    GetBio: function(user) {
-        const [bio, setBio] = useState(null);
+    return avatar;
+  },
 
-        useEffect(() => {
-            const api = 'https://api.github.com/users/' 
-            const url = api.concat('', user)
-            const token = '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'
+  GetBio: function (user) {
+    const [bio, setBio] = useState(null);
 
-            fetch(url, {headers: {
-                Authorization: `token ${token}`
-              }})
-                .then((response) => response.json())
-                .then((data) => setBio(data.bio))
-        }, []);
+    useEffect(() => {
+      const api = "https://api.github.com/users/";
+      const url = api.concat("", user);
+      const token = "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";
 
-        if(bio === null){
-            setBio("Esse usuário não possui bio")
-        }
+      fetch(url, {
+        headers: {
+          Authorization: `token ${token}`,
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => setBio(data.bio));
+    }, []);
 
-        return bio
-    },
+    if (bio === null) {
+      setBio("Esse usuário não possui bio");
+    }
 
-    GetOrgs: function(user) {
-        const [orgUrl, setOrgsUrl] = useState([])
+    return bio;
+  },
 
-        useEffect(() => {
-            const api = 'https://api.github.com/users/' 
-            const userUrl = api.concat('',user)
-            const url = userUrl.concat('/orgs')
-            const token = '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'
+  GetOrgs: function (user) {
+    const [orgUrl, setOrgsUrl] = useState([]);
 
-            const FetchOrgs = async() => {
-                const response = await fetch(url, {headers: {
-                    Authorization: `token ${token}`
-                  }})
-                const getOrgsUrl = await response.json()
-                console.log(getOrgsUrl)
-                setOrgsUrl(getOrgsUrl.map(item => item.url))
-                console.log(orgUrl)
-            }
-            
-            FetchOrgs()
+    useEffect(() => {
+      const api = "https://api.github.com/users/";
+      const userUrl = api.concat("", user);
+      const url = userUrl.concat("/orgs");
+      const token = "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";
 
-        }, [])
+      const FetchOrgs = async () => {
+        const response = await fetch(url, {
+          headers: {
+            Authorization: `token ${token}`,
+          },
+        });
+        const getOrgsUrl = await response.json();
+        console.log(getOrgsUrl);
+        setOrgsUrl(getOrgsUrl.map((item) => item.url));
+        console.log(orgUrl);
+      };
 
-        if(!orgUrl.length){
-            setOrgsUrl(["Este usuário não poussui organizações"])
-            return orgUrl
-        }else{
-            return orgUrl
-        }
-        
-    },
-    
-    GetRepos: function(user) {
-        const [repos, setRepos] = useState([])
+      FetchOrgs();
+    }, []);
 
-        useEffect(() => {
-            const api = 'https://api.github.com/users/' 
-            const userUrl = api.concat('',user)
-            const url = userUrl.concat('/repos')
-            const token = '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'
+    if (!orgUrl.length) {
+      setOrgsUrl(["Este usuário não poussui organizações"]);
+      return orgUrl;
+    } else {
+      return orgUrl;
+    }
+  },
 
-            const FetchRepos = async() => {
-                const response = await fetch(url, {headers: {
-                    Authorization: `token ${token}`
-                  }})
-                const getRepos = await response.json()
+  GetRepos: function (user) {
+    const [repos, setRepos] = useState([]);
 
-                setRepos(getRepos.map(item => item.name))
-            }
+    useEffect(() => {
+      const api = "https://api.github.com/users/";
+      const userUrl = api.concat("", user);
+      const url = userUrl.concat("/repos");
+      const token = "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";
 
-            FetchRepos()           
-        }, [])
+      const FetchRepos = async () => {
+        const response = await fetch(url, {
+          headers: {
+            Authorization: `token ${token}`,
+          },
+        });
+        const getRepos = await response.json();
 
-        if( !repos.length){
-            setRepos(["Este usuário não poussui repositórios"])
-        }
+        setRepos(getRepos.map((item) => item.name));
+      };
 
-        return repos
-    },
+      FetchRepos();
+    }, []);
 
-    GetFollowersLogin: function(user){
-        const [followersLogin, setFollowerLogin] = useState([])
+    if (!repos.length) {
+      setRepos(["Este usuário não poussui repositórios"]);
+    }
 
-        useEffect(() => {
-            const api = 'https://api.github.com/users/' 
-            const userUrl = api.concat('',user)
-            const url = userUrl.concat('/followers')
-            const token = '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'
+    return repos;
+  },
 
-            const FetchFollowersLogin = async() => {
-                const response = await fetch(url, {headers: {
-                    Authorization: `token ${token}`
-                  }})
-                const getFollowersLogin = await response.json()
+  GetFollowersLogin: function (user) {
+    const [followersLogin, setFollowerLogin] = useState([]);
 
-                setFollowerLogin(getFollowersLogin.map(item => ({login: item.login, avatar: item.avatar_url})))
-            };
+    useEffect(() => {
+      const api = "https://api.github.com/users/";
+      const userUrl = api.concat("", user);
+      const url = userUrl.concat("/followers");
+      const token = "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";
 
-            FetchFollowersLogin() 
-        }, [])
-        
-        if( !followersLogin.length){
-            setFollowerLogin([{login: "Este usuário não possui seguidores"}])
-        }
+      const FetchFollowersLogin = async () => {
+        const response = await fetch(url, {
+          headers: {
+            Authorization: `token ${token}`,
+          },
+        });
+        const getFollowersLogin = await response.json();
 
-        return followersLogin
-    },
+        setFollowerLogin(
+          getFollowersLogin.map((item) => ({
+            login: item.login,
+            avatar: item.avatar_url,
+          }))
+        );
+      };
 
-}
+      FetchFollowersLogin();
+    }, []);
 
-export default Fetch
+    if (!followersLogin.length) {
+      setFollowerLogin([{ login: "Este usuário não possui seguidores" }]);
+    }
+
+    return followersLogin;
+  },
+};
+
+export default Fetch;
