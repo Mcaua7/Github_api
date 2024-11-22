@@ -6,11 +6,10 @@ import { useLocalSearchParams, router } from "expo-router";
 
 export default function Followers() {
   const login = useLocalSearchParams();
-  const user = login.user;
 
   function GoBack() {
-    router.push({ pathname: "/Pages/Profile", params: { user } });
-  }
+    router.back();
+  };
 
   return (
     <View style={styles.container}>

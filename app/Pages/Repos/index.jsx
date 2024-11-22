@@ -6,10 +6,9 @@ import { useLocalSearchParams, router } from "expo-router";
 
 export default function Repos() {
   const login = useLocalSearchParams();
-  const user = login.user;
 
   function GoBack() {
-    router.push({ pathname: "/Pages/Profile", params: { user } });
+    router.back();
   }
 
   return (

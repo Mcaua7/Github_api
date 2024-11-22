@@ -11,7 +11,7 @@ import FollowersInfo from "../../Components/Followers/Followers";
 
 export default function Profile() {
   function Reset() {
-    router.push({ pathname: "Pages/Search" });
+    router.back();
   }
   return (
     <View style={styles.container}>

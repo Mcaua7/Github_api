@@ -19,7 +19,7 @@ const Fetch = {
   },
 
   GetName: function (user) {
-    const [name, setName] = useState(null);
+    const [name, setName] = useState();
 
     const api = "https://api.github.com/users/";
     const url = api.concat("", user);
@@ -161,7 +161,6 @@ const Fetch = {
     if (!followersLogin.length) {
       setFollowerLogin([{ login: "Este usuário não possui seguidores" }]);
     }
-
     return followersLogin;
   },
 };
