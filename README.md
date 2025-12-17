@@ -1,10 +1,10 @@
-# 🐙 Github_api
+#  Github_api
 
 Projeto em **JavaScript** que consome a **API do GitHub** para buscar e exibir informações públicas, como usuários e repositórios. O objetivo é praticar consumo de APIs, organização de projeto e manipulação de dados retornados.
 
 ---
 
-## 📌 Sobre o projeto
+## Sobre o projeto
 
 O **Github_api** foi desenvolvido como um projeto de estudo para entender como funciona a comunicação com APIs REST, utilizando a API oficial do GitHub. Ele faz requisições HTTP, trata as respostas e exibe os dados de forma organizada.
 
@@ -16,16 +16,16 @@ Este projeto é ideal para quem está aprendendo:
 
 ---
 
-## 🚀 Funcionalidades
+##  Funcionalidades
 
-* 🔍 Buscar informações de usuários do GitHub
-* 📦 Listar repositórios públicos
-* 📊 Exibir dados retornados pela API
-* ⚙️ Estrutura organizada em pastas
+*  Buscar informações de usuários do GitHub
+*  Listar repositórios públicos
+*  Exibir dados retornados pela API
+*  Estrutura organizada em pastas
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+##  Tecnologias Utilizadas
 
 * **JavaScript**
 * **Node.js**
@@ -34,7 +34,7 @@ Este projeto é ideal para quem está aprendendo:
 
 ---
 
-## 📂 Estrutura do Projeto
+##  Estrutura do Projeto
 
 ```text
 📦 Github_api
@@ -50,7 +50,7 @@ Este projeto é ideal para quem está aprendendo:
 
 ---
 
-## ⚙️ Pré-requisitos
+##  Pré-requisitos
 
 Antes de executar o projeto, você precisa ter instalado:
 
@@ -59,7 +59,7 @@ Antes de executar o projeto, você precisa ter instalado:
 
 ---
 
-## ▶️ Como executar o projeto
+##  Como executar o projeto
 
 ```bash
 # Clone o repositório
@@ -79,7 +79,7 @@ npm start
 
 ---
 
-## 🔐 Variáveis de ambiente (opcional)
+##  Variáveis de ambiente (opcional)
 
 Se você estiver usando autenticação na API do GitHub, crie um arquivo `.env` na raiz do projeto:
 
@@ -89,7 +89,7 @@ GITHUB_TOKEN=seu_token_do_github
 
 ---
 
-## 📚 Aprendizados
+##  Aprendizados
 
 Com este projeto foi possível praticar:
 
@@ -100,7 +100,7 @@ Com este projeto foi possível praticar:
 
 ---
 
-## 👤 Autor
+##  Autor
 
 **Cauã**
 
